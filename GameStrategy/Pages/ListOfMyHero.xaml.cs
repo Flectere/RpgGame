@@ -22,13 +22,11 @@ namespace GameStrategy.Pages
     public partial class ListOfMyHero : Page
     {
         Hero selectedHero;
-        public static string type_class;
-        public ListOfMyHero(string type)
+
+        public ListOfMyHero()
         {
             InitializeComponent();
-            type_class = type;
-            List<Hero> list = CRUD.GetHero(type);
-            ListSettings.ItemsSource = list;
+            ListSettings.ItemsSource = CRUD.GetHero(App.type); 
             DataContext = this;
         }
         private void AddPowerBt_Click(object sender, RoutedEventArgs e)
@@ -136,18 +134,33 @@ namespace GameStrategy.Pages
             {
                 MessageBox.Show("Выберите героя!", "Невозможно изменить", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
         }
 
         private void SaveBt_Click(object sender, RoutedEventArgs e)
         {
-            CRUD.UpdateRogue(selectedHero as Rogue);
+            MessageBox.Show(selectedHero.Name);
+            CRUD.UpdateHero(selectedHero as Hero);
+            ListSettings.ItemsSource = CRUD.GetHero(App.type);
+        }
+
+        private void AcceptAddBt_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(HeroNameTb.Text))
+            {
+                MessageBox.Show("Введите имя", "Попутанье", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            CRUD.CreateHero(new Rogue(HeroNameTb.Text));
+            ListSettings.ItemsSource = CRUD.GetHero(App.type);
+            AddStackpanel.Visibility = Visibility.Collapsed;
+            AddHeroBt.Visibility = Visibility.Visible;
+           
         }
 
         private void AddHeroBt_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CreateHero());
+            AddStackpanel.Visibility = Visibility.Visible;
+            AddHeroBt.Visibility = Visibility.Collapsed;
         }
-
     }
 }

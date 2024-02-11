@@ -42,7 +42,6 @@ namespace GameStrategy.Classes
         }
 
         public ObjectId _id;
-        public string _t { get; set; }
         public string Name { get { return _name; } set { _name = value; } }
         public int LevelPoints { get { return _levelPoints; }
             set

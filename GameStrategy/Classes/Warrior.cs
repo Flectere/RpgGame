@@ -15,8 +15,10 @@ namespace GameStrategy.Classes
             {
                 _power = value;
                 Health = (int)(2 * _vitality +  _power);
+                Damage = _power;
             }
         }
+
         public override int Intelligence
         {
             get { return _intelligence; }
@@ -29,14 +31,27 @@ namespace GameStrategy.Classes
             }
 
         }
-        public override int Dexterity { get { return _dexterity; } 
+
+        public override int Dexterity 
+        { 
+            get { return _dexterity; } 
             set 
             { 
                 _dexterity = value;
                 Armor = _dexterity;
             } 
         }
-        public override int Vitality { get { return _vitality; } set { _vitality = value; } }
+
+        public override int Vitality 
+        { 
+            get { return _vitality; } 
+            set 
+            { 
+                _vitality = value;
+                Health = (int)(2 * _vitality + _power);
+            } 
+        }
+
         public Warrior(string name) : base(name)
         {
             _levelPoints = 0;

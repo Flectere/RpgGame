@@ -14,35 +14,47 @@ namespace GameStrategy.Classes
             set
             {
                 _power = value;
-                Health = (int)(1.5 * _vitality + 0.5 * _power);
+                Health = (int)(1.4 * _vitality + 0.2 * _power);
+                Damage = (int)(0.5 * _power);
             }
         }
         public override int Intelligence
         {
             get { return _intelligence; }
             set
-            { _intelligence = value; }
-
+            { 
+                _intelligence = value;
+                Mana = (int)(1.5 * _intelligence);
+                MagicDamage =  _intelligence;
+                MagicDefense = _intelligence;
+            }
         }
-        public override int Dexterity { get { return _dexterity; } set { _dexterity = value; } }
-        public override int Vitality { get { return _vitality; } set { _vitality = value; } }
+        public override int Dexterity 
+        { 
+            get { return _dexterity; } 
+            set 
+            {
+                _dexterity = value; 
+                Armor = _dexterity;
+            } 
+        }
+        public override int Vitality 
+        { 
+            get { return _vitality; } 
+            set 
+            { 
+                _vitality = value; 
+            }
+        }
         public Wizard(string name) : base(name)
         {
             _levelPoints = 0;
             _level = 0;
-            _power = 20;
-            _intelligence = 15;
-            _dexterity = 30;
-            _vitality = 20;
+            _power = 15;
+            _intelligence = 35;
+            _dexterity = 20;
+            _vitality = 15;
             StarPoints = 0;
-            Health = (int)(1.5 * _vitality + 0.5 * _power);
-            Mana = (int)(1.2 * _intelligence);
-            Damage = (int)(0.5 * _power + 0.5 * _dexterity);
-            Armor = (int)(1.5 * _dexterity);
-            MagicDamage = (int)(0.2 * _intelligence);
-            MagicDefense = (int)(0.5 * _intelligence);
-            CritChance = (int)(0.2 * _dexterity);
-            CritDamage = 1 * _dexterity;
         }
     }
 }

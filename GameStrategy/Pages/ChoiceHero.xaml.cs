@@ -20,7 +20,6 @@ namespace GameStrategy.Pages
     /// </summary>
     public partial class ChoiceHero : Page
     {
-        public static string type;
         public ChoiceHero()
         {
             InitializeComponent();
@@ -28,20 +27,20 @@ namespace GameStrategy.Pages
 
         private void warriorBt_Click(object sender, RoutedEventArgs e)
         {
-            type = "Warrior";
-            NavigationService.Navigate(new ListOfMyHero(type));
+            App.type = "Warrior";
+            NavigationService.Navigate(new ListOfMyHero());
         }
 
         private void rogueBt_Click(object sender, RoutedEventArgs e)
         {
-            type = "Rogue";
-            NavigationService.Navigate(new ListOfMyHero(type));
+            App.type = "Rogue";
+            NavigationService.Navigate(new ListOfMyHero());
         }
 
         private void wizardBt_Click(object sender, RoutedEventArgs e)
         {
-            type = "Wizard";
-            NavigationService.Navigate(new ListOfMyHero(type));
+            App.type = "Wizard";
+            NavigationService.Navigate(new ListOfMyHero());
         }
     }
 }

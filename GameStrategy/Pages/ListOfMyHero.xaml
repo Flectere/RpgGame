@@ -30,7 +30,7 @@
 
 
         <TextBlock Grid.RowSpan="4"
-                   Grid.ColumnSpan="8">
+              Grid.ColumnSpan="8">
             <TextBlock.Background>
                 <ImageBrush ImageSource="/Images/night_forest.jpg" Stretch="Fill"/>
             </TextBlock.Background>
@@ -39,12 +39,12 @@
 
         <TextBlock Background="#7F242E83"
                    Grid.RowSpan="4"
-                   Grid.ColumnSpan="8"></TextBlock>
+                   Grid.ColumnSpan="8"/>
 
         <TextBlock Background="#7F010419"
            Grid.RowSpan="3"
            Grid.Row="0"
-           Grid.ColumnSpan="8"></TextBlock>
+           Grid.ColumnSpan="8"/>
 
 
         <ListView   FontSize="22"
@@ -512,14 +512,32 @@
                 Background="#FF7684FF"
                 Name="SaveBt"
                 FontSize="30" Click="SaveBt_Click">Save</Button>
-
-        <Button Grid.Row="3"
-                Grid.Column="1"
+        <Button 
+            Visibility="Visible"
+            Grid.Row="3" 
+            Grid.Column="1"
+            Width="200"
+            Height="50"
+            Background="#FF7684FF"
+            Name="AddHeroBt"
+            FontSize="30" 
+            Content="Add hero"
+            Click="AddHeroBt_Click"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Visibility="Collapsed" Name="AddStackpanel">
+            <Button 
                 Width="200"
                 Height="50"
                 Background="#FF7684FF"
-                Name="AddHeroBt"
-                FontSize="30" Click="AddHeroBt_Click">Add hero</Button>
-
+                Name="AcceptAddBt"
+                FontSize="30" 
+                Content="Accept"
+                Margin="0 0 0 50" Click="AcceptAddBt_Click"/>
+            <TextBox
+                Name="HeroNameTb"
+                Width="200"
+                Height="50"
+                Background="White" 
+                Foreground="#FF7684FF"/>
+        </StackPanel>
     </Grid>
 </Page>
