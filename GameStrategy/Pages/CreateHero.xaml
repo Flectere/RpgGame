@@ -1,0 +1,39 @@
+﻿<Page x:Class="GameStrategy.Pages.CreateHero"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GameStrategy.Pages"
+      mc:Ignorable="d" 
+      Height="1080" Width="1920"
+      FontSize="32" 
+      Title="CreateHero">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+                    Orientation="Horizontal">
+            <TextBlock
+            FontWeight="Bold" 
+            Foreground="White"
+            >Past name:</TextBlock>
+            <TextBox Width="400" Margin="14 0 0 0"
+                     Name="NameTb"
+                     FontWeight="Bold" 
+                     Foreground="White"></TextBox>
+        </StackPanel>
+        <Button Grid.Row="1"
+                Width="200"
+                Height="60"
+                Margin="0 30 0 0"
+                VerticalAlignment="Top"
+                Background="#FF7684FF"
+                Name="AddHeroBt"
+                FontSize="32" Click="AddHeroBt_Click" 
+                >Add</Button>
+    </Grid>
+</Page>
