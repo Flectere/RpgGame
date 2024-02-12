@@ -122,7 +122,7 @@ namespace GameStrategy.Pages
         {
             try
             {
-                selectedHero = ListSettings.SelectedItem as Hero;
+                selectedHero = ListSettings.SelectedItem as Hero;   
                 myLevelTb.Text = selectedHero.Level.ToString();
                 CountDexterityTb.Text = selectedHero.Dexterity.ToString();
                 CountInteligienceTb.Text = selectedHero.Intelligence.ToString();
@@ -139,8 +139,9 @@ namespace GameStrategy.Pages
         private void SaveBt_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(selectedHero.Name);
-            CRUD.UpdateHero(selectedHero as Hero);
-            ListSettings.ItemsSource = CRUD.GetHero(App.type);
+            CRUD.UpdateHero(selectedHero as Rogue);
+
+           ListSettings.Items.Refresh();
         }
 
         private void AcceptAddBt_Click(object sender, RoutedEventArgs e)
@@ -150,11 +151,14 @@ namespace GameStrategy.Pages
                 MessageBox.Show("Введите имя", "Попутанье", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            CRUD.CreateHero(new Rogue(HeroNameTb.Text));
-            ListSettings.ItemsSource = CRUD.GetHero(App.type);
+            if(App.type == "Rogue")
+                CRUD.CreateHero(new Rogue(HeroNameTb.Text));
+            else if (App.type == "Warrior")
+                CRUD.CreateHero(new Warrior(HeroNameTb.Text));
+            else
+                CRUD.CreateHero(new Wizard(HeroNameTb.Text));
             AddStackpanel.Visibility = Visibility.Collapsed;
             AddHeroBt.Visibility = Visibility.Visible;
-           
         }
 
         private void AddHeroBt_Click(object sender, RoutedEventArgs e)

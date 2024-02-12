@@ -10,6 +10,7 @@ using System.Windows;
 
 namespace GameStrategy.Classes
 {
+    [BsonKnownTypes(typeof(Rogue), typeof(Warrior), typeof(Wizard))]
     public class Hero
     {
         protected string _name;

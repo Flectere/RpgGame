@@ -27,7 +27,7 @@ namespace GameStrategy
         }
         public static void UpdateHero(Hero hero)
         {
-            
+            MessageBox.Show(hero.Name);
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StrategyGame");
             var collection = database.GetCollection<Hero>("HeroCollection");
