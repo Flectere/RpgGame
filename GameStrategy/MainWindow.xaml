@@ -12,6 +12,6 @@
         WindowState="Maximized"
        >
     <Grid>
-        <Frame Name="mainFrame"></Frame>
+        <Frame Name="mainFrame"/>
     </Grid>
 </Window>

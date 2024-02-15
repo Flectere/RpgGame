@@ -144,9 +144,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Axe.cs" />
+    <Compile Include="Classes\Dagger.cs" />
     <Compile Include="Classes\Hero.cs" />
+    <Compile Include="Classes\Mace.cs" />
     <Compile Include="Classes\Rogue.cs" />
+    <Compile Include="Classes\Sword.cs" />
+    <Compile Include="Classes\Wand.cs" />
     <Compile Include="Classes\Warrior.cs" />
+    <Compile Include="Classes\Weapon.cs" />
     <Compile Include="Classes\Wizard.cs" />
     <Compile Include="MongoDB\CRUD.cs" />
     <Compile Include="MainWindow.xaml.cs">
