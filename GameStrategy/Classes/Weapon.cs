@@ -7,38 +7,21 @@ using System.Threading.Tasks;
 
 namespace GameStrategy.Classes
 {
-    internal class Weapon
+    public class Weapon
     {
-        protected int power;
-        protected int intelligence = 0;
-        protected int dexterity = 0;
-        protected int vitality = 0;
-        protected int health = 0;
-        protected int mana = 0;
-        protected int damage = 0;
-        protected int armor = 0;
-        protected int magicDamage = 0;
-        protected int magicDefense = 0;
-        protected int critChanсe = 0;
-        protected int critDamage = 0;
-        protected bool shieldAvailable = false;
-        public Weapon(int power, int intelligence, int dexterity, int vitality, int health,
-                      int mana, int damage, int armor, int magicDamage, int magicDefense,
-                      int critChance, int critDamage, bool shieldAvailable)
-        {
-            this.power = power;
-            this.intelligence = intelligence;
-            this.dexterity = dexterity;
-            this.vitality = vitality;
-            this.health = health;
-            this.mana = mana;
-            this.damage = damage;
-            this.armor = armor;
-            this.magicDamage = magicDamage;
-            this.magicDefense = magicDefense;
-            this.critChanсe = critChance;
-            this.critDamage = critDamage;
-            this.shieldAvailable = shieldAvailable;
-        }
+        public int power;
+        public int intelligence;
+        public int dexterity;
+        public int vitality;
+        public int health;
+        public int mana;
+        public int damage;
+        public int armor;
+        public int magicDamage;
+        public int magicDefense;
+        public int critChanсe;
+        public int critDamage;
+        public bool shieldAvailable = true;
+       
     }
 }

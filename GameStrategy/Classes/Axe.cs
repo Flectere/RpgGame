@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameStrategy.Classes
 {
-    internal class Axe
+    public class Axe : Weapon
     {
+        public Axe()
+        {
+            damage = 30;
+        }
     }
 }

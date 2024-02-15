@@ -48,12 +48,12 @@ namespace GameStrategy.Classes
         }
         public Wizard(string name) : base(name)
         {
-            _levelPoints = 0;
-            _level = 0;
-            _power = 15;
-            _intelligence = 35;
-            _dexterity = 20;
-            _vitality = 15;
+            LevelPoints = 0;
+            Level = 0;
+            Power = 15;
+            Intelligence = 35;
+            Dexterity = 20;
+            Vitality = 15;
             StarPoints = 0;
         }
     }

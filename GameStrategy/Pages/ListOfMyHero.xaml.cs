@@ -138,10 +138,13 @@ namespace GameStrategy.Pages
 
         private void SaveBt_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(selectedHero.Name);
-            CRUD.UpdateHero(selectedHero as Rogue);
-
-           ListSettings.Items.Refresh();
+            if (App.type == "Warrior")
+                CRUD.UpdateHero(selectedHero as Warrior);
+            else if (App.type == "Rogue")
+                CRUD.UpdateHero(selectedHero as Rogue);
+            else
+                CRUD.UpdateHero(selectedHero as Wizard);
+            ListSettings.Items.Refresh();
         }
 
         private void AcceptAddBt_Click(object sender, RoutedEventArgs e)
@@ -151,14 +154,15 @@ namespace GameStrategy.Pages
                 MessageBox.Show("Введите имя", "Попутанье", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if(App.type == "Rogue")
-                CRUD.CreateHero(new Rogue(HeroNameTb.Text));
-            else if (App.type == "Warrior")
+            if(App.type == "Warrior")
                 CRUD.CreateHero(new Warrior(HeroNameTb.Text));
+            else if (App.type == "Rogue")
+                CRUD.CreateHero(new Rogue(HeroNameTb.Text));
             else
                 CRUD.CreateHero(new Wizard(HeroNameTb.Text));
             AddStackpanel.Visibility = Visibility.Collapsed;
             AddHeroBt.Visibility = Visibility.Visible;
+            ListSettings.Items.Refresh();
         }
 
         private void AddHeroBt_Click(object sender, RoutedEventArgs e)
