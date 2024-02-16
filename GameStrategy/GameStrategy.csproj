@@ -146,6 +146,7 @@
     </Compile>
     <Compile Include="Classes\Axe.cs" />
     <Compile Include="Classes\Dagger.cs" />
+    <Compile Include="Classes\Hand.cs" />
     <Compile Include="Classes\Hero.cs" />
     <Compile Include="Classes\Mace.cs" />
     <Compile Include="Classes\Rogue.cs" />

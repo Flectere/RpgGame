@@ -13,9 +13,13 @@ namespace GameStrategy.Classes
             get { return _power; }
             set
             {
-                _power = value;
+                _power = value + weapon.power;
                 Health = (int)(2 * _vitality +  _power);
                 Damage = _power;
+                if (weapon != null)
+                {
+                    _power += weapon.power;
+                }
             }
         }
 

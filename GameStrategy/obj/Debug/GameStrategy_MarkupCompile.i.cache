@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Булат\Desktop\RpgGame\RpgGame\GameStrategy\obj\Debug\
+C:\Users\202124\Desktop\RpgGame\GameStrategy\obj\Debug\
 GameStrategy
 none
 false
 DEBUG;TRACE
-C:\Users\Булат\Desktop\RpgGame\RpgGame\GameStrategy\App.xaml
+C:\Users\202124\Desktop\RpgGame\GameStrategy\App.xaml
 3-1606204665
-2-1309815047
-19-1811509845
-41510711021
+2-1046537376
+20-959779648
+41-1167054641
 MainWindow.xaml;Pages\ChoiceHero.xaml;Pages\ListOfMyHero.xaml;
 
-False
+True
 

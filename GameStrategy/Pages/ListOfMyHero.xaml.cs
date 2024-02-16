@@ -88,12 +88,12 @@ namespace GameStrategy.Pages
             try
             {
                 if (selectedHero.StarPoints > 0)
-                    {
-                        selectedHero.Intelligence++;
-                        selectedHero.StarPoints--;
-                        CountInteligienceTb.Text = selectedHero.Intelligence.ToString();
-                        CountPointsTb.Text = selectedHero.StarPoints.ToString();
-                    }
+                {
+                    selectedHero.Intelligence++;
+                    selectedHero.StarPoints--;
+                    CountInteligienceTb.Text = selectedHero.Intelligence.ToString();
+                    CountPointsTb.Text = selectedHero.StarPoints.ToString();
+                }
             }
             catch
             {

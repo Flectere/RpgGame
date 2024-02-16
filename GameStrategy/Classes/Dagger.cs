@@ -9,15 +9,25 @@ namespace GameStrategy.Classes
 {
     public class Dagger : Weapon
     {
-        public bool TwoHanded;
-        public Dagger(bool twoHanded)
+        public Dagger(int level)
         {
             damage = 10;
             dexterity = 15;
-            critChanсe = (int)(critChanсe + critChanсe * 0.6);
-            critDamage = (int)(critDamage + critDamage * 0.7);
+            critChanсe = 0.6;
+            critDamage = 0.7;
             shieldAvailable = false;
-            TwoHanded = twoHanded;
+            if (level == 2)
+            {
+                critChanсe = 0.7;
+                critDamage = 0.8;
+            }
+            else if (level == 3)
+            {
+                damage = -5;
+                shieldAvailable = true;
+                dexterity = -10;
+                vitality = 10;
+            }
         }
     }
 }

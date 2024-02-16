@@ -11,6 +11,9 @@ namespace GameStrategy.Classes
         public Axe()
         {
             damage = 30;
+            power = 30;
+            critChanсe = (int)(critChanсe + critChanсe * 0.2);
+            critDamage = (int)(critDamage + critDamage * 1.7);
         }
     }
 }

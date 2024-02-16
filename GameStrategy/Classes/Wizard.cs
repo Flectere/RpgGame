@@ -14,8 +14,8 @@ namespace GameStrategy.Classes
             set
             {
                 _power = value;
-                Health = (int)(1.4 * _vitality + 0.2 * _power);
-                Damage = (int)(0.5 * _power);
+                Health = (int)(1.4 * _vitality + 0.2 * _power + weapon.health);
+                Damage = (int)(0.5 * _power + weapon.damage);
             }
         }
         public override int Intelligence
@@ -24,7 +24,7 @@ namespace GameStrategy.Classes
             set
             { 
                 _intelligence = value;
-                Mana = (int)(1.5 * _intelligence);
+                Mana = (int)(1.5 * _intelligence + weapon.mana);
                 MagicDamage =  _intelligence;
                 MagicDefense = _intelligence;
             }
@@ -35,7 +35,7 @@ namespace GameStrategy.Classes
             set 
             {
                 _dexterity = value; 
-                Armor = _dexterity;
+                Armor = _dexterity + weapon.armor;
             } 
         }
         public override int Vitality 

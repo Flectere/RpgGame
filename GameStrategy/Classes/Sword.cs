@@ -8,14 +8,19 @@ namespace GameStrategy.Classes
 {
     public class Sword : Weapon
     {
-        public Sword()
+        public Sword(int level)
         {
             damage = 20;
             dexterity = 5;
             power = 10;
             shieldAvailable = true;
-            critChanсe = (int)(critChanсe + critChanсe * 0.35);
-            critDamage = (int)(critDamage + critDamage * 1.5);
+            critChanсe = 0.35;
+            critDamage = 1.5;
+            if (level == 2) 
+            {
+                damage = 30;
+                //доделать
+            }
         }
     }
 }

@@ -19,9 +19,9 @@ namespace GameStrategy.Classes
         public int armor;
         public int magicDamage;
         public int magicDefense;
-        public int critChanсe;
-        public int critDamage;
+        public double critChanсe;
+        public double critDamage;
         public bool shieldAvailable = true;
-       
+        public bool twoWeapon = false;
     }
 }

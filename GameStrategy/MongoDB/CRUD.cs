@@ -33,5 +33,7 @@ namespace GameStrategy
             var filter = Builders<Hero>.Filter.Eq(i => i._id, hero._id);
             collection.ReplaceOne(filter, hero);
         }
+
+        
     }
 }
