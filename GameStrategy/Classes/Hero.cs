@@ -14,13 +14,13 @@ namespace GameStrategy.Classes
     public class Hero
     {
         protected string _name;
+        protected Weapon _weapon;
         protected int _levelPoints;
         protected int _level;
         protected int _power;
         protected int _intelligence;
         protected int _dexterity;
         protected int _vitality;
-        protected Weapon _weapon;
         private int _starPoints;
         private int _health;
         private int _mana;
@@ -76,10 +76,11 @@ namespace GameStrategy.Classes
                 StarPoints += 5;
             } 
         }
-        public virtual int Power { get { return _power; } set { _power = value; } }
-        public virtual int Intelligence { get { return _intelligence; } set { _intelligence = value; } }
-        public virtual int Dexterity { get { return _dexterity; } set { _dexterity = value; } }
-        public virtual int Vitality { get { return _vitality; } set { _vitality = value; } }
+        
+        public virtual int Power { get { return _power; } set { _power = value + _weapon.power; } }
+        public virtual int Intelligence { get { return _intelligence; } set { _intelligence = value + _weapon.intelligence; } }
+        public virtual int Dexterity { get { return _dexterity; } set { _dexterity = value + _weapon.dexterity; } }
+        public virtual int Vitality { get { return _vitality; } set { _vitality = value + _weapon.vitality; } }
         public int StarPoints { get { return _starPoints; } 
             set { 
                     if (value >= 0)
@@ -89,51 +90,52 @@ namespace GameStrategy.Classes
                 } 
         }
 
-        public int Health { get { return _health; } set { _health = value; } }
-        public int Mana { get { return _mana; } set { _mana = value; } }
-        public int Damage { get { return _damage; } set { _damage = value; } }
-        public int Armor { get { return _armor; } set { _armor = value; } }
-        public int MagicDamage { get { return _magicDamage; } set { _magicDamage = value; } }
-        public int MagicDefense { get { return _magicDefense; } set { _magicDefense = value; } }
-        public int CritChance { get {
-                if (weapon is Wand)
-                    CritChance = (int)(weapon.critChanсe);
+        public int Health { get { return _health; } set { _health = value + Weapon.health; } }
+        public int Mana { get { return _mana; } set { _mana = value + Weapon.mana; } }
+        public int Damage { get { return _damage; } set { _damage = value + Weapon.damage; } }
+        public int Armor { get { return _armor; } set { _armor = value + Weapon.armor; } }
+        public int MagicDamage { get { return _magicDamage; } set { _magicDamage = value + Weapon.magicDamage; } }
+        public int MagicDefense { get { return _magicDefense; } set { _magicDefense = value + Weapon.magicDefense; } }
+        public double CritChance { get {
+                if (Weapon is Wand)
+                    CritChance = (int)(Weapon.critChanсe);
                 else
-                    CritChance = (int)(_dexterity * 0.2 + _critChanсe * weapon.critChanсe);
+                    CritChance = (int)(_dexterity * 0.2 + _critChanсe * Weapon.critChanсe);
                 return _critChanсe;
             } 
             set { _critChanсe = value; } }
-        public int CritDamage { get 
+        public double CritDamage { get 
             {
-                if (weapon is Wand)
-                    CritDamage = (int)(weapon.critDamage);
+                if (Weapon is Wand)
+                    CritDamage = Weapon.critDamage;
                 else
-                    CritDamage = (int)(_dexterity * 0.1 + _critDamage * weapon.critDamage);
+                    CritDamage = _dexterity * 0.1 + _critDamage * Weapon.critDamage;
                 return _critDamage;
             } 
             set { _critDamage = value; } }
-        public Weapon weapon { get { return _weapon; }
-            set 
-            { 
-                Power -= weapon.power;
-                Dexterity -= weapon.dexterity;
-                Vitality -= weapon.vitality;
-                Intelligence -= weapon.intelligence;
-                
+        public Weapon Weapon
+        {
+            get { return _weapon; }
+            set
+            {
+                Power -= _weapon.power;
+                Dexterity -= _weapon.dexterity;
+                Vitality -= _weapon.vitality;
+                Intelligence -= _weapon.intelligence;
+
                 _weapon = value;
 
-                Power += weapon.power;
-                Dexterity += weapon.dexterity;
-                Vitality += weapon.vitality;
-                Intelligence += weapon.intelligence;
-            } 
+                Power += _weapon.power;
+                Dexterity += _weapon.dexterity;
+                Vitality += _weapon.vitality;
+                Intelligence += _weapon.intelligence;
+            }
         }
-        
+
         public Hero(string name)
         {
             _name = name;
             _weapon = new Hand();
-
         }
     }
 }

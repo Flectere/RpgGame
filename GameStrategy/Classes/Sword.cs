@@ -19,7 +19,14 @@ namespace GameStrategy.Classes
             if (level == 2) 
             {
                 damage = 30;
-                //доделать
+                power = 20;
+            }
+            if (level == 3)
+            {
+                damage = 30;
+                power = 20;
+                dexterity = 10;
+                intelligence = 3;
             }
         }
     }

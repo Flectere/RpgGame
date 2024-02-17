@@ -23,9 +23,9 @@ namespace GameStrategy.Classes
             }
             else if (level == 3)
             {
-                damage = -5;
+                damage = 5;
                 shieldAvailable = true;
-                dexterity = -10;
+                dexterity = 5;
                 vitality = 10;
             }
         }

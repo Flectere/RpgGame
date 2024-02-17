@@ -13,8 +13,8 @@ namespace GameStrategy.Classes
             set 
             {
                 _power = value;
-                Damage = (int)(0.5 * _power + 0.5 * _dexterity + weapon.damage);
-                Health = (int)(1.5 * _vitality + 0.5 * _power + weapon.health);
+                Damage = (int)(0.5 * _power + 0.5 * _dexterity);
+                Health = (int)(1.5 * _vitality + 0.5 * _power);
             }
         }
 
@@ -22,23 +22,24 @@ namespace GameStrategy.Classes
             set
             {
                 _intelligence = value;
-                Mana = (int)(1.2 * _intelligence + weapon.mana);
+                Mana = (int)(1.2 * _intelligence);
                 MagicDamage = (int)(0.2 * _intelligence);
                 MagicDefense = (int)(0.5 * _intelligence);
             }
         }
+
         public override int Dexterity { get { return _dexterity; }
             set
             {
                 _dexterity = value; 
-                Armor = (int)(1.5 * _dexterity + weapon.armor);
+                Armor = (int)(1.5 * _dexterity);
             }
         }
         public override int Vitality { get { return _vitality; } 
             set 
             { 
                 _vitality = value;
-                Health = (int)(1.5 * _vitality + 0.5 * _power + weapon.health);
+                Health = (int)(1.5 * _vitality + 0.5 * _power);
             } 
         }
         public Rogue(string name) : base(name)

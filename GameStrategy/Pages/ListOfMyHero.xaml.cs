@@ -162,7 +162,6 @@ namespace GameStrategy.Pages
                 CRUD.CreateHero(new Wizard(HeroNameTb.Text));
             AddStackpanel.Visibility = Visibility.Collapsed;
             AddHeroBt.Visibility = Visibility.Visible;
-            ListSettings.Items.Refresh();
         }
 
         private void AddHeroBt_Click(object sender, RoutedEventArgs e)

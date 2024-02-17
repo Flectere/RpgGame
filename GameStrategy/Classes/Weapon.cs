@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace GameStrategy.Classes
 {
+    [BsonKnownTypes(typeof(Hand))]
     public class Weapon
     {
-        public int power;
-        public int intelligence;
-        public int dexterity;
-        public int vitality;
-        public int health;
-        public int mana;
-        public int damage;
-        public int armor;
-        public int magicDamage;
-        public int magicDefense;
-        public double critChanсe;
-        public double critDamage;
+        public int power = 0;
+        public int intelligence = 0;
+        public int dexterity = 0;
+        public int vitality = 0;
+        public int health = 0;
+        public int mana = 0 ;
+        public int damage = 0;
+        public int armor = 0;
+        public int magicDamage = 0;
+        public int magicDefense = 0;
+        public double critChanсe = 0;
+        public double critDamage = 0;
         public bool shieldAvailable = true;
         public bool twoWeapon = false;
     }
