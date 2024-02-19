@@ -10,22 +10,25 @@ namespace GameStrategy.Classes
     {
         public Mace(int level)
         {
-            damage = 30;
-            power = 20;
-            health = 5;
-            critChanсe = 0.1;
-            critDamage = 2.5;
+            NameWeapon = "Mace";
+            Damage = 30;
+            Power = 20;
+            Health = 5;
+            CritChanсe = 0.1;
+            CritDamage = 2.5;
             if (level == 2)
             {
-                dexterity -= 10;
-                power = 25;
+                NameWeapon = "Enchanted mace";
+                Dexterity -= 10;
+                Power = 25;
             }
             if (level == 3)
             {
-                dexterity -= 5;
-                power = 25;
-                damage = 50;
-                intelligence -= 5;
+                NameWeapon = "Rare mace";
+                Dexterity -= 5;
+                Power = 25;
+                Damage = 50;
+                Intelligence -= 5;
             }
         }
     }

@@ -169,5 +169,10 @@ namespace GameStrategy.Pages
             AddStackpanel.Visibility = Visibility.Visible;
             AddHeroBt.Visibility = Visibility.Collapsed;
         }
+
+        private void WeaponChoiceBt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ChoiceWeaponPage());
+        }
     }
 }

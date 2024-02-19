@@ -10,22 +10,25 @@ namespace GameStrategy.Classes
     {
         public Wand(int level)
         {
-            damage = 5;
-            mana = 5;
-            intelligence = 5;
-            critChanсe = 5;
-            critDamage = 3;
+            NameWeapon = "Wand";
+            Damage = 5;
+            Mana = 5;
+            Intelligence = 5;
+            CritChanсe = 5;
+            CritDamage = 3;
             if(level == 2) 
             {
-                intelligence += 5;
-                armor = 2;
+                NameWeapon = "Enchanted wand";
+                Intelligence += 5;
+                Armor = 2;
             }
             if(level == 3)
             {
-                magicDamage += 5;
-                magicDefense += 8;
-                health -= 5;
-                damage -= 5;
+                NameWeapon = "Rare wand";
+                MagicDamage += 5;
+                MagicDefense += 8;
+                Health -= 5;
+                Damage -= 5;
             }
         }
     }

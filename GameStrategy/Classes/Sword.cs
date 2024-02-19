@@ -10,23 +10,26 @@ namespace GameStrategy.Classes
     {
         public Sword(int level)
         {
-            damage = 20;
-            dexterity = 5;
-            power = 10;
+            NameWeapon = "Sword";
+            Damage = 20;
+            Dexterity = 5;
+            Power = 10;
             shieldAvailable = true;
-            critChanсe = 0.35;
-            critDamage = 1.5;
+            CritChanсe = 0.35;
+            CritDamage = 1.5;
             if (level == 2) 
             {
-                damage = 30;
-                power = 20;
+                NameWeapon = "Enchanted sword";
+                Damage = 30;
+                Power = 20;
             }
             if (level == 3)
             {
-                damage = 30;
-                power = 20;
-                dexterity = 10;
-                intelligence = 3;
+                NameWeapon = "Rare sword";
+                Damage = 30;
+                Power = 20;
+                Dexterity = 10;
+                Intelligence = 3;
             }
         }
     }

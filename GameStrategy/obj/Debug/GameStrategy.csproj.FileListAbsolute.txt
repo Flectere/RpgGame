@@ -312,3 +312,5 @@ C:\Users\202124\Desktop\RpgGame\GameStrategy\obj\Debug\GameStrategy.csproj.CoreC
 C:\Users\202124\Desktop\RpgGame\GameStrategy\obj\Debug\GameStrategy.csproj.CopyComplete
 C:\Users\202124\Desktop\RpgGame\GameStrategy\obj\Debug\GameStrategy.exe
 C:\Users\202124\Desktop\RpgGame\GameStrategy\obj\Debug\GameStrategy.pdb
+C:\Users\202124\Source\Repos\RpgGame\GameStrategy\obj\Debug\Pages\ChoiceWeaponPage.g.cs
+C:\Users\202124\Source\Repos\RpgGame\GameStrategy\obj\Debug\Pages\ChoiceWeaponPage.baml

@@ -54,7 +54,7 @@
                     Name="ListSettings"
                     VerticalAlignment="Top"
                     Grid.ColumnSpan="8"
-                    FontWeight="Bold" SelectionChanged="ListSettings_SelectionChanged" ItemsSource="{Binding list}">
+                    FontWeight="Bold" SelectionChanged="ListSettings_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -539,5 +539,18 @@
                 Background="White" 
                 Foreground="#FF7684FF"/>
         </StackPanel>
+        <Button 
+                Width="200"
+                Grid.Column="7"
+                Grid.Row="3"
+                Height="100"
+                Background="#FF7684FF"
+                Name="WeaponChoiceBt"
+                FontSize="30" 
+                Margin="0 0 0 50" Click="WeaponChoiceBt_Click">
+            <Image Source="\Images\weapon.png"
+                   Width="80"
+                   Height="80"></Image>
+        </Button>
     </Grid>
 </Page>

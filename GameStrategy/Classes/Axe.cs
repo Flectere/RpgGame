@@ -10,21 +10,24 @@ namespace GameStrategy.Classes
     {
         public Axe(int level)
         {
-            damage = 30;
-            power = 30;
-            critChanсe = 0.2;
-            critDamage = 1.7;
+            NameWeapon = "Axe";
+            Damage = 30;
+            Power = 30;
+            CritChanсe = 0.2;
+            CritDamage = 1.7;
             if (level == 2)
             {
-                dexterity = -10;
-                power = 40;
+                NameWeapon = "Enchanted axe";
+                Dexterity = -10;
+                Power = 40;
             }
             else if (level == 3)
             {
-                dexterity = -20;
-                power = 40;
-                critChanсe -= 2;
-                critDamage = 2;
+                NameWeapon = "Rare axe";
+                Dexterity = -20;
+                Power = 40;
+                CritChanсe -= 2;
+                CritDamage = 2;
             }
         }
     }

@@ -11,22 +11,25 @@ namespace GameStrategy.Classes
     {
         public Dagger(int level)
         {
-            damage = 10;
-            dexterity = 15;
-            critChanсe = 0.6;
-            critDamage = 0.7;
+            NameWeapon = "Dagger";
+            Damage = 10;
+            Dexterity = 15;
+            CritChanсe = 0.6;
+            CritDamage = 0.7;
             shieldAvailable = false;
             if (level == 2)
             {
-                critChanсe = 0.7;
-                critDamage = 0.8;
+                NameWeapon = "Enchanted dagger";
+                CritChanсe = 0.7;
+                CritDamage = 0.8;
             }
             else if (level == 3)
             {
-                damage = 5;
+                NameWeapon = "Rare dagger";
+                Damage = 5;
                 shieldAvailable = true;
-                dexterity = 5;
-                vitality = 10;
+                Dexterity = 5;
+                Vitality = 10;
             }
         }
     }

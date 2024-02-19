@@ -164,6 +164,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChoiceWeaponPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ListOfMyHero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +176,9 @@
   <ItemGroup>
     <Compile Include="Pages\ChoiceHero.xaml.cs">
       <DependentUpon>ChoiceHero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChoiceWeaponPage.xaml.cs">
+      <DependentUpon>ChoiceWeaponPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListOfMyHero.xaml.cs">
       <DependentUpon>ListOfMyHero.xaml</DependentUpon>
@@ -264,6 +271,7 @@
   <ItemGroup>
     <Resource Include="Images\experience.png" />
     <Resource Include="Images\lvl.png" />
+    <Resource Include="Images\weapon.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
